@@ -9,7 +9,7 @@ import com.jasonxu.recyclerview.Entity.ItemData;
 
 import java.util.List;
 
-import ViewHolder.ItemClickViewHolder;
+import com.jasonxu.recyclerview.ViewHolder.ItemClickViewHolder;
 
 /**
  * Created by t_xuz on 6/17/16.
