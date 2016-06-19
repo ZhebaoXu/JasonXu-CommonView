@@ -38,7 +38,7 @@ public abstract class OnRecyclerItemClickListener implements RecyclerView.OnItem
     private class ItemTouchHelperGestureListener extends GestureDetector.SimpleOnGestureListener{
 
         @Override
-        public boolean onSingleTapUp(MotionEvent e) {
+        public boolean onSingleTapUp(MotionEvent e) {//单击
             View child = mRecyclerView.findChildViewUnder(e.getX(),e.getY());
             if (child!=null){
                 RecyclerView.ViewHolder viewHolder = mRecyclerView.getChildViewHolder(child);
@@ -48,7 +48,7 @@ public abstract class OnRecyclerItemClickListener implements RecyclerView.OnItem
         }
 
         @Override
-        public void onLongPress(MotionEvent e) {
+        public void onLongPress(MotionEvent e) {//长按
             View child = mRecyclerView.findChildViewUnder(e.getX(),e.getY());
             if (child != null){
                 RecyclerView.ViewHolder viewHolder = mRecyclerView.getChildViewHolder(child);

@@ -4,12 +4,16 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jasonxu.recyclerview.Adapter.DragListRecyclerAdapter;
+import com.jasonxu.recyclerview.Adapter.DragListRecyclerAdapter2;
 import com.jasonxu.recyclerview.Decoration.DividerItemDecoration;
 import com.jasonxu.recyclerview.Entity.ItemData;
+import com.jasonxu.recyclerview.Interface.MyItemTouchCallback;
 import com.jasonxu.recyclerview.Interface.OnRecyclerItemClickListener;
 import com.jasonxu.recyclerview.R;
 import com.jasonxu.recyclerview.Utils.VibratorUtil;
@@ -50,10 +54,17 @@ public class DragListFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+//        DragListRecyclerAdapter mAdapter = new DragListRecyclerAdapter(R.layout.list_item,itemDataList);
+        DragListRecyclerAdapter2 mAdapter = new DragListRecyclerAdapter2(R.layout.item_list,itemDataList);
         RecyclerView mRecyclerView = (RecyclerView)view;
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext(),LinearLayoutManager.VERTICAL,false));
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.addItemDecoration(new DividerItemDecoration(view.getContext(),DividerItemDecoration.VERTICAL_LIST));
+        mRecyclerView.setAdapter(mAdapter);
+        //实现拖拽功能
+        //1.实例化一个 ItemTouchHelper 对象,并关联到 RecyclerView 中;
+        final ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new MyItemTouchCallback(mAdapter));
+        itemTouchHelper.attachToRecyclerView(mRecyclerView);
 
         mRecyclerView.addOnItemTouchListener(new OnRecyclerItemClickListener(mRecyclerView) {
             @Override
@@ -65,7 +76,7 @@ public class DragListFragment extends BaseFragment {
             public void onItemLongClick(RecyclerView.ViewHolder viewHolder, int position) {
                 //如果最后一个时就不能拖动
                 if (position != itemDataList.size()-1){
-
+                    itemTouchHelper.startDrag(viewHolder);
                     VibratorUtil.Vibrate(mContext,70);
                 }
                /* if (viewHolder.getLayoutPosition() != itemDataList.size()-1){
