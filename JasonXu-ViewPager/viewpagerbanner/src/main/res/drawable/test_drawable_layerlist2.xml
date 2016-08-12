@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--说明: 可以通过设置外面图层的margin值来让里层的图层显示出边缘,但是外面的图层的图片会被margin挤挤-->
+    <item
+
+        android:drawable="@mipmap/beauty_one" />
+    <item
+        android:bottom="30dp"
+        android:drawable="@mipmap/beauty_two"
+        android:left="30dp"
+        android:right="30dp"
+        android:top="30dp" />
+
+    <item
+        android:bottom="60dp"
+        android:drawable="@mipmap/beauty_three"
+        android:left="60dp"
+        android:right="60dp"
+        android:top="60dp" />
+
+</layer-list>

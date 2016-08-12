@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- padding 会使自身变大,所以在第一个图层(最低层)设置padding值,就相当于把底层图层变大,然后显示层叠效果
+    故:在最外面的图层设置padding值仍然会覆盖底层图层
+    -->
+
+
+    <item>
+        <shape android:shape="oval">
+            <padding android:bottom="5dp" android:right="5dp" android:left="5dp" android:top="5dp" />
+            <size android:width="25dp" android:height="25dp" />
+            <solid android:color="@color/colorPrimaryDark" />
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="oval">
+
+            <size android:height="25dp" android:width="25dp"/>
+            <solid android:color="@color/colorAccent"/>
+        </shape>
+    </item>
+</layer-list>
