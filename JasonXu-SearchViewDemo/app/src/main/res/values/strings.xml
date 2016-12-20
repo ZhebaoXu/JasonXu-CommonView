@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">JasonXu-SearchViewDemo</string>
+
+
+    <!-- flowLayout-->
+    <string name="gravity_left">left</string>
+    <string name="gravity_center">center</string>
+    <string name="gravity_right">right</string>
+
+    <string name="searchTextHint">搜索音乐、歌手、歌词、用户</string>
+</resources>

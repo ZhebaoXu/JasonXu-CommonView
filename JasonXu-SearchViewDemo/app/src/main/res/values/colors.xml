@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--整个app字体颜色控制-->
+    <color name="app_gray_text">#969696</color>
+    <color name="app_gray_text2">#848696</color>
+    <color name="app_gray_text_light">#ffc8c8c8</color>
+    <color name="app_black_text">#ff000000</color>
+    <color name="app_blue_text">#2ba3ff</color>
+    <color name="app_gray_line">#c8c8c8</color> <!--分割线颜色-->
+    <color name="app_red_text">#ff332e</color>
+    <color name="app_white_back">#ffffff</color>
+    <color name="app_highlight_blue">#23b1e6</color>
+    <color name="app_light_blue">#b4cfe3</color>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_white_back"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/popUp_search_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textColor="@color/app_highlight_blue"
+        android:layout_margin="12dp"
+        android:text="搜索" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/app_gray_line" />
+
+    <ListView
+        android:id="@+id/popUp_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:listSelector="@drawable/listview_selector">
+
+    </ListView>
+
+</LinearLayout>
